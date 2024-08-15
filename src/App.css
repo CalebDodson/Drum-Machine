@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+:root {
+  --background: #0f0e17;
+  --primary: #ff8906;
+  --secondary: #f25f4c;
+  --tertiary: #e53170;
+  --text: #fffffe;
+  --paragraph: #a7a9be;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #0f0e17;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#drum-machine {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: var(--paragraph);
+  margin: 350px auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 750px;
+  height: 500px;
+  place-items: center;
+  border: 10px outset var(--secondary);
+  min-width: 400px;
 }
-
-.App-link {
-  color: #61dafb;
+#button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  max-width: 500px;
+  max-height: 500px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.drum-pad {
+  padding: 25px;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: 2px 2px 5px var(--tertiary);
+}
+.drum-pad:active {
+  background-color: var(--tertiary);
+  box-shadow: none;
+}
+.drum-pad.active {
+  background-color: var(--tertiary);
+  box-shadow: none;
+}
+#display {
+  width: 250px;
+  height: 70px;
+  margin-left: 50px;
+  line-height: 70px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--background);
+  color: var(--text);
+  border-radius: 5px;
+}
+@media (max-width: 800px) {
+  #drum-machine {
+    width: 70%;
+    height: auto;
+    margin: 200px auto;
+    padding: 20px;
+    border-width: 5px;
   }
-  to {
-    transform: rotate(360deg);
+
+  #button-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  .drum-pad {
+    padding: 15px;
+    font-size: 1.5em;
+  }
+
+  #display {
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+    margin-left: 20px;
   }
 }
